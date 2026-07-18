@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Structured Data for AI Agents — Extract JSON from Any URL</title>
+  <meta name="description" content="Extract structured JSON from any web page for AI agents. Send a URL and schema type, get validated product, article, or company data. No browser farm, no proxy rotation.">
+  <meta name="keywords" content="structured data AI agents, URL to JSON API, web scraping API agents, extract product data URL, AI agent data extraction, structured web data">
+  <meta property="og:title" content="Structured Data for AI Agents — URL + Schema → JSON">
+  <meta property="og:description" content="Extract structured product, article, and company data from any URL. Built for AI agents.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://agent-api-gateway.github.io/">
+  <link rel="canonical" href="https://agent-api-gateway.github.io/">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fafafa; }
+    .hero { background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); color: white; padding: 80px 20px; text-align: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .hero p { font-size: 1.2rem; color: #a0a0c0; max-width: 600px; margin: 0 auto 30px; }
+    .hero a { display: inline-block; background: #4f46e5; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
+    .hero a:hover { background: #4338ca; }
+    .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+    h2 { font-size: 1.8rem; margin-bottom: 16px; color: #0f0f23; }
+    h3 { font-size: 1.3rem; margin-bottom: 12px; color: #333; }
+    p { margin-bottom: 16px; color: #444; }
+    .code-block { background: #0f0f23; color: #e0e0ff; padding: 20px; border-radius: 8px; font-family: 'Fira Code', monospace; font-size: 0.9rem; overflow-x: auto; margin: 20px 0; }
+    .code-block .comment { color: #6b7280; }
+    .code-block .keyword { color: #818cf8; }
+    .code-block .string { color: #34d399; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 30px 0; }
+    .feature { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .feature h3 { color: #4f46e5; }
+    .pricing { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin: 30px 0; }
+    .pricing-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .pricing-table th, .pricing-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    .pricing-table th { background: #f9fafb; font-weight: 600; }
+    .pricing-table .price { font-weight: 700; color: #4f46e5; }
+    .cta { text-align: center; padding: 60px 20px; background: #f0f0ff; }
+    .cta a { display: inline-block; background: #4f46e5; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.2rem; }
+    footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; }
+    code { background: #f0f0ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Structured Web Data for AI Agents</h1>
+  <p>Send a URL + schema type. Get validated JSON back. No browser farm, no proxy rotation, no CSS selectors to maintain.</p>
+  <a href="https://agentapigw.dpdns.org">Try the API Free →</a>
+</div>
+
+<div class="container">
+  <h2>The Problem</h2>
+  <p>AI agents need structured data from web pages. Every site has different HTML, anti-bot measures, and selector maintenance overhead. Building and maintaining scrapers for each site is expensive and fragile.</p>
+
+  <h2>The Solution</h2>
+  <p><strong>Agent API Gateway</strong> is a REST API that extracts structured JSON from any public URL. Send a URL and a schema type (product, article, or company), and get validated JSON back — instantly.</p>
+
+  <div class="code-block">
+    <span class="comment"># Extract product data from any URL</span><br>
+    <span class="keyword">POST</span> /v1/extract<br>
+    {<br>
+    &nbsp;&nbsp;<span class="string">"url"</span>: "https://example.com/product-page",<br>
+    &nbsp;&nbsp;<span class="string">"schema_type"</span>: "product"<br>
+    }<br><br>
+    <span class="comment"># Response: validated JSON with name, price, description, images, etc.</span>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>🔍 Schema-Guided Extraction</h3>
+      <p>Three built-in schemas: product, article, and company. Each returns validated fields with proper types.</p>
+    </div>
+    <div class="feature">
+      <h3>✅ Validated Output</h3>
+      <p>Every response is validated against the schema. Missing fields are flagged. No guesswork.</p>
+    </div>
+    <div class="feature">
+      <h3>🤖 Agent-Ready</h3>
+      <p>Built-in <code>llms.txt</code> and <code>agent.json</code> for autonomous AI agent discovery.</p>
+    </div>
+    <div class="feature">
+      <h3>⚡ Fast & Reliable</h3>
+      <p>Deployed on Render with automatic scaling. 16,000+ requests served in the first 24 hours.</p>
+    </div>
+  </div>
+
+  <h2>How It Works</h2>
+  <p>1. <strong>Send a request</strong> — POST to <code>/v1/extract</code> with a URL and schema type.<br>
+  2. <strong>Get structured JSON</strong> — Validated, typed, ready for your agent pipeline.<br>
+  3. <strong>Handle errors gracefully</strong> — Clear error messages when extraction fails.</p>
+
+  <h2>Supported Schemas</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Product</h3>
+      <p>Name, price, currency, description, images, availability, brand, SKU, ratings.</p>
+    </div>
+    <div class="feature">
+      <h3>Article</h3>
+      <p>Title, author, published date, content, word count, language, tags, image.</p>
+    </div>
+    <div class="feature">
+      <h3>Company</h3>
+      <p>Name, description, industry, employees, founded, headquarters, social links, contact.</p>
+    </div>
+  </div>
+
+  <div class="pricing">
+    <h2>Pricing</h2>
+    <p>Start free. Scale when you need to.</p>
+    <table class="pricing-table">
+      <thead>
+        <tr><th>Plan</th><th>Credits</th><th>Price</th><th>Rate Limit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Free</td><td>100/month</td><td class="price">$0</td><td>10 RPM</td></tr>
+        <tr><td>Starter</td><td>1,000</td><td class="price">$1</td><td>30 RPM</td></tr>
+        <tr><td>5K Pack</td><td>5,000</td><td class="price">$4</td><td>30 RPM</td></tr>
+        <tr><td>25K Pack</td><td>25,000</td><td class="price">$15</td><td>30 RPM</td></tr>
+        <tr><td>Hobby</td><td>5,000/month</td><td class="price">$29/mo</td><td>60 RPM</td></tr>
+        <tr><td>Pro</td><td>25,000/month</td><td class="price">$99/mo</td><td>300 RPM</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Use Cases</h2>
+  <p><strong>AI Agent Pipelines</strong> — Feed structured web data into your LLM workflows.<br>
+  <strong>Price Monitoring</strong> — Track product prices across e-commerce sites.<br>
+  <strong>Content Aggregation</strong> — Collect and normalize article data from multiple sources.<br>
+  <strong>Market Research</strong> — Extract company information for competitive analysis.<br>
+  <strong>RAG Systems</strong> — Enforce data quality with schema-validated extraction.</p>
+
+  <h2>Built With</h2>
+  <p>Python, FastAPI, Pydantic, deployed on Render. Open API with full documentation.</p>
+</div>
+
+<div class="cta">
+  <a href="https://agentapigw.dpdns.org">Get Started Free →</a>
+  <p style="margin-top: 16px; color: #666;">No credit card required. 100 free queries per month.</p>
+</div>
+
+<footer>
+  <p>A NexusCore product · <a href="https://agentapigw.dpdns.org">agentapigw.dpdns.org</a></p>
+</footer>
+
+</body>
+</html>
