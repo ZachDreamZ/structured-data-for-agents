@@ -17,13 +17,20 @@
     .hero { background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); color: white; padding: 80px 20px; text-align: center; }
     .hero h1 { font-size: 2.5rem; margin-bottom: 16px; max-width: 700px; margin-left: auto; margin-right: auto; }
     .hero p { font-size: 1.2rem; color: #a0a0c0; max-width: 600px; margin: 0 auto 30px; }
-    .hero a { display: inline-block; background: #4f46e5; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
-    .hero a:hover { background: #4338ca; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+    .hero-buttons a { display: inline-block; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.2s; }
+    .btn-primary { background: #4f46e5; color: white; }
+    .btn-primary:hover { background: #4338ca; }
+    .btn-starter { background: #10b981; color: white; }
+    .btn-starter:hover { background: #059669; }
+    .social-proof { display: flex; gap: 32px; justify-content: center; margin-top: 20px; color: #a0a0c0; font-size: 0.95rem; flex-wrap: wrap; }
+    .social-proof span { display: flex; align-items: center; gap: 6px; }
+    .social-proof .num { color: #818cf8; font-weight: 700; }
     .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
     h2 { font-size: 1.8rem; margin-bottom: 16px; color: #0f0f23; }
     h3 { font-size: 1.3rem; margin-bottom: 12px; color: #333; }
     p { margin-bottom: 16px; color: #444; }
-    .code-block { background: #0f0f23; color: #e0e0ff; padding: 20px; border-radius: 8px; font-family: 'Fira Code', monospace; font-size: 0.9rem; overflow-x: auto; margin: 20px 0; }
+    .code-block { background: #0f0f23; color: #e0e0ff; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 0.9rem; overflow-x: auto; margin: 20px 0; }
     .code-block .comment { color: #6b7280; }
     .code-block .keyword { color: #818cf8; }
     .code-block .string { color: #34d399; }
@@ -35,10 +42,20 @@
     .pricing-table th, .pricing-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e5e7eb; }
     .pricing-table th { background: #f9fafb; font-weight: 600; }
     .pricing-table .price { font-weight: 700; color: #4f46e5; }
+    .pricing-table .highlight-row { background: #f0f0ff; }
+    .pricing-table .buy-btn { display: inline-block; background: #10b981; color: white; padding: 6px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+    .pricing-table .buy-btn:hover { background: #059669; }
     .cta { text-align: center; padding: 60px 20px; background: #f0f0ff; }
-    .cta a { display: inline-block; background: #4f46e5; color: white; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.2rem; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-buttons a { display: inline-block; padding: 16px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.2rem; }
+    .cta .subtext { margin-top: 16px; color: #666; font-size: 0.95rem; }
     footer { text-align: center; padding: 30px; color: #888; font-size: 0.9rem; }
     code { background: #f0f0ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    .starter-banner { background: linear-gradient(135deg, #065f46 0%, #047857 100%); color: white; padding: 32px 20px; text-align: center; border-radius: 12px; margin: 30px 0; }
+    .starter-banner h2 { color: white; margin-bottom: 8px; }
+    .starter-banner p { color: #a7f3d0; margin-bottom: 16px; }
+    .starter-banner a { display: inline-block; background: white; color: #047857; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+    .starter-banner a:hover { background: #f0fdf4; }
   </style>
 </head>
 <body>
@@ -46,7 +63,15 @@
 <div class="hero">
   <h1>Structured Web Data for AI Agents</h1>
   <p>Send a URL + schema type. Get validated JSON back. No browser farm, no proxy rotation, no CSS selectors to maintain.</p>
-  <a href="https://agentapigw.dpdns.org">Try the API Free →</a>
+  <div class="hero-buttons">
+    <a href="https://agentapigw.dpdns.org" class="btn-primary">Try Free</a>
+    <a href="https://agentapigw.dpdns.org/buy?sku=credits_1k" class="btn-starter">Buy $1 Starter (1K credits)</a>
+  </div>
+  <div class="social-proof">
+    <span><span class="num">16,800+</span> requests served</span>
+    <span><span class="num">99.9%</span> uptime</span>
+    <span><span class="num">$1</span> to get started</span>
+  </div>
 </div>
 
 <div class="container">
@@ -66,27 +91,33 @@
     <span class="comment"># Response: validated JSON with name, price, description, images, etc.</span>
   </div>
 
+  <div class="starter-banner">
+    <h2>Start for $1</h2>
+    <p>1,000 extraction credits. Never expires. No subscription required.</p>
+    <a href="https://agentapigw.dpdns.org/buy?sku=credits_1k">Buy Starter Pack</a>
+  </div>
+
   <div class="features">
     <div class="feature">
-      <h3>🔍 Schema-Guided Extraction</h3>
+      <h3>Schema-Guided Extraction</h3>
       <p>Three built-in schemas: product, article, and company. Each returns validated fields with proper types.</p>
     </div>
     <div class="feature">
-      <h3>✅ Validated Output</h3>
+      <h3>Validated Output</h3>
       <p>Every response is validated against the schema. Missing fields are flagged. No guesswork.</p>
     </div>
     <div class="feature">
-      <h3>🤖 Agent-Ready</h3>
-      <p>Built-in <code>llms.txt</code> and <code>agent.json</code> for autonomous AI agent discovery.</p>
+      <h3>Agent-Ready</h3>
+      <p>Built-in llms.txt and agent.json for autonomous AI agent discovery.</p>
     </div>
     <div class="feature">
-      <h3>⚡ Fast & Reliable</h3>
-      <p>Deployed on Render with automatic scaling. 16,000+ requests served in the first 24 hours.</p>
+      <h3>Fast and Reliable</h3>
+      <p>Deployed on Render with automatic scaling. 16,800+ requests served and counting.</p>
     </div>
   </div>
 
   <h2>How It Works</h2>
-  <p>1. <strong>Send a request</strong> — POST to <code>/v1/extract</code> with a URL and schema type.<br>
+  <p>1. <strong>Send a request</strong> — POST to /v1/extract with a URL and schema type.<br>
   2. <strong>Get structured JSON</strong> — Validated, typed, ready for your agent pipeline.<br>
   3. <strong>Handle errors gracefully</strong> — Clear error messages when extraction fails.</p>
 
@@ -94,55 +125,4 @@
   <div class="features">
     <div class="feature">
       <h3>Product</h3>
-      <p>Name, price, currency, description, images, availability, brand, SKU, ratings.</p>
-    </div>
-    <div class="feature">
-      <h3>Article</h3>
-      <p>Title, author, published date, content, word count, language, tags, image.</p>
-    </div>
-    <div class="feature">
-      <h3>Company</h3>
-      <p>Name, description, industry, employees, founded, headquarters, social links, contact.</p>
-    </div>
-  </div>
-
-  <div class="pricing">
-    <h2>Pricing</h2>
-    <p>Start free. Scale when you need to.</p>
-    <table class="pricing-table">
-      <thead>
-        <tr><th>Plan</th><th>Credits</th><th>Price</th><th>Rate Limit</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Free</td><td>100/month</td><td class="price">$0</td><td>10 RPM</td></tr>
-        <tr><td>Starter</td><td>1,000</td><td class="price">$1</td><td>30 RPM</td></tr>
-        <tr><td>5K Pack</td><td>5,000</td><td class="price">$4</td><td>30 RPM</td></tr>
-        <tr><td>25K Pack</td><td>25,000</td><td class="price">$15</td><td>30 RPM</td></tr>
-        <tr><td>Hobby</td><td>5,000/month</td><td class="price">$29/mo</td><td>60 RPM</td></tr>
-        <tr><td>Pro</td><td>25,000/month</td><td class="price">$99/mo</td><td>300 RPM</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2>Use Cases</h2>
-  <p><strong>AI Agent Pipelines</strong> — Feed structured web data into your LLM workflows.<br>
-  <strong>Price Monitoring</strong> — Track product prices across e-commerce sites.<br>
-  <strong>Content Aggregation</strong> — Collect and normalize article data from multiple sources.<br>
-  <strong>Market Research</strong> — Extract company information for competitive analysis.<br>
-  <strong>RAG Systems</strong> — Enforce data quality with schema-validated extraction.</p>
-
-  <h2>Built With</h2>
-  <p>Python, FastAPI, Pydantic, deployed on Render. Open API with full documentation.</p>
-</div>
-
-<div class="cta">
-  <a href="https://agentapigw.dpdns.org">Get Started Free →</a>
-  <p style="margin-top: 16px; color: #666;">No credit card required. 100 free queries per month.</p>
-</div>
-
-<footer>
-  <p>A NexusCore product · <a href="https://agentapigw.dpdns.org">agentapigw.dpdns.org</a></p>
-</footer>
-
-</body>
-</html>
+    
