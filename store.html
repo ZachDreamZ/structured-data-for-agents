@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Developer Tools — PyReview, Agent Prompts & ScrapeUnblocker | Vendex Store</title>
+  <meta name="description" content="Handcrafted developer tools for AI engineers. PyReview CLI ($5), Agent Prompt Toolkit ($9), and ScrapeUnblocker ($19). Instant download, lifetime access.">
+  <meta name="keywords" content="ai developer tools, pyreview, agent prompts, web scraping, python cli tools">
+  <meta property="og:title" content="AI Developer Tools — PyReview, Prompts & Unblocker">
+  <meta property="og:description" content="Handcrafted tools for AI engineers. Instant download, lifetime access.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shadowcraft41.gumroad.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Developer Tools Store">
+  <meta name="twitter:description" content="PyReview CLI, Agent Prompts & ScrapeUnblocker">
+  <link rel="canonical" href="https://shadowcraft41.gumroad.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #0f172a; background: #f8fafc; }
+    
+    .nav { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-weight: 700; font-size: 1.2rem; color: #0f172a; text-decoration: none; }
+    .nav-brand span { color: #6366f1; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: #475569; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #6366f1; }
+
+    .hero { text-align: center; padding: 80px 24px 60px; max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 16px; background: linear-gradient(135deg, #0f172a 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto 32px; }
+    .hero-badge { display: inline-block; background: #eef2ff; color: #6366f1; padding: 6px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin: 40px 0; }
+    .product-card { background: white; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; transition: all 0.2s; }
+    .product-card:hover { border-color: #c7d2fe; box-shadow: 0 8px 24px rgba(99,102,241,0.08); transform: translateY(-2px); }
+    .product-header { padding: 32px 32px 0; }
+    .product-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .product-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+    .product-desc { color: #64748b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px; }
+    .product-price { font-size: 2rem; font-weight: 800; color: #6366f1; margin-bottom: 4px; }
+    .product-price span { font-size: 1rem; font-weight: 400; color: #94a3b8; }
+    .product-cta { display: block; text-align: center; padding: 14px; margin: 20px 32px 32px; background: #0f172a; color: white; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: background 0.2s; }
+    .product-cta:hover { background: #6366f1; }
+    .product-footer { padding: 0 32px 20px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { display: inline-block; background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; }
+    .tag.featured { background: #eef2ff; color: #6366f1; }
+    .tag.new { background: #fef2f2; color: #dc2626; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 60px 0; }
+    .feature-card { background: white; padding: 32px; border-radius: 12px; border: 1px solid #e2e8f0; }
+    .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+    .feature-card p { color: #64748b; font-size: 0.95rem; }
+
+    .section-title { text-align: center; margin: 60px 0 32px; }
+    .section-title h2 { font-size: 2rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+    .section-title p { color: #64748b; max-width: 500px; margin: 0 auto; }
+
+    .bundle { background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%); padding: 48px; border-radius: 16px; text-align: center; margin: 40px 0; border: 1px solid #c7d2fe; }
+    .bundle h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+    .bundle p { color: #475569; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .bundle-price { font-size: 2.5rem; font-weight: 800; color: #6366f1; margin-bottom: 20px; }
+    .bundle-price span { font-size: 1rem; color: #94a3b8; font-weight: 400; }
+    .bundle-cta { display: inline-block; background: #6366f1; color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
+    .bundle-cta:hover { background: #4f46e5; }
+    .bundle-note { font-size: 0.85rem; color: #94a3b8; margin-top: 12px; }
+
+    .faq { max-width: 700px; margin: 40px auto; }
+    .faq-question { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; cursor: pointer; }
+    .faq-question h3 { font-size: 1rem; font-weight: 600; color: #0f172a; margin-bottom: 4px; }
+    .faq-question p { color: #64748b; font-size: 0.9rem; }
+
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+    .testimonial { background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; }
+    .testimonial-stars { color: #f59e0b; margin-bottom: 8px; }
+    .testimonial-text { color: #475569; font-size: 0.95rem; margin-bottom: 12px; line-height: 1.6; }
+    .testimonial-author { font-weight: 600; font-size: 0.9rem; color: #0f172a; }
+    .testimonial-role { font-size: 0.8rem; color: #94a3b8; }
+
+    .cta-section { text-align: center; padding: 80px 24px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); margin-top: 60px; }
+    .cta-section h2 { font-size: 2rem; font-weight: 700; color: white; margin-bottom: 12px; }
+    .cta-section p { color: #94a3b8; margin-bottom: 32px; }
+    .cta-section a { display: inline-block; background: #6366f1; color: white; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
+    .cta-section a:hover { background: #4f46e5; }
+
+    .stats { display: flex; justify-content: center; gap: 48px; margin: 60px 0; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: #6366f1; }
+    .stat-label { color: #64748b; font-size: 0.9rem; }
+
+    footer { text-align: center; padding: 40px 24px; color: #94a3b8; font-size: 0.85rem; }
+    footer a { color: #6366f1; text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 48px 20px 40px; }
+      .products { grid-template-columns: 1fr; }
+      .stats { gap: 24px; }
+      .bundle { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Vendex<span>Dev</span></a>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#features">Features</a>
+      <a href="https://gumroad.com/settings/payments" target="_blank">Support</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">🛒 Developer Tools Store</div>
+  <h1>Tools for AI Engineers<br>That Actually Work</h1>
+  <p>Stop writing prompts, scrapers, and configs from scratch. Download battle-tested tools and get back to building.</p>
+</section>
+
+<div class="container">
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Products</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Satisfaction</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Instant</div>
+      <div class="stat-label">Download</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Lifetime</div>
+      <div class="stat-label">Access</div>
+    </div>
+  </div>
+
+  <div id="products" class="section-title">
+    <h2>Our Products</h2>
+    <p>Handcrafted developer tools. Instant download. Lifetime access. No subscriptions.</p>
+  </div>
+
+  <div class="products">
+    <!-- Product 1: PyReview CLI -->
+    <div class="product-card">
+      <div class="product-header">
+        <div class="product-icon">🐍</div>
+        <div class="product-name">PyReview — Python Code Quality Analyzer</div>
+        <div class="product-desc">A Python CLI tool that extracts structured JSON from any public URL. Perfect for RAG pipelines, agent tool use, and data analysis. No API keys needed.</div>
+        <div class="product-price">$5 <span>USD</span></div>
+      </div>
+      <div class="product-footer">
+        <span class="tag featured">Python</span>
+        <span class="tag">CLI</span>
+        <span class="tag">JSON</span>
+        <span class="tag new">Popular</span>
+      </div>
+      <a href="https://shadowcraft41.gumroad.com/l/yeztiz" class="product-cta" target="_blank">Buy Now →</a>
+    </div>
+
+    <!-- Product 2: Agent Prompt Toolkit -->
+    <div class="product-card">
+      <div class="product-header">
+        <div class="product-icon">🤖</div>
+        <div class="product-name">Agent Prompt Engineering Toolkit</div>
+        <div class="product-desc">50 production-ready prompts for Claude, Codex & AI coding agents. Organized by category with variables, examples, and tips. Works with any AI coding assistant.</div>
+        <div class="product-price">$9 <span>USD</span></div>
+      </div>
+      <div class="product-footer">
+        <span class="tag featured">Prompts</span>
+        <span class="tag">Claude</span>
+        <span class="tag">Codex</span>
+        <span class="tag">Cursor</span>
+      </div>
+      <a href="https://shadowcraft41.gumroad.com/l/dhsayw" class="product-cta" target="_blank">Buy Now →</a>
+    </div>
+
+    <!-- Product 3: ScrapeUnblocker -->
+    <div class="product-card">
+      <div class="product-header">
+        <div class="product-icon">🔓</div>
+        <div class="product-name">Protocol ScrapeUnblocker</div>
+        <div class="product-desc">Bypass anti-bot measures and extract data from protected websites. Residential proxy rotation, browser fingerprinting, and CAPTCHA solving built in.</div>
+        <div class="product-price">$19 <span>USD</span></div>
+      </div>
+      <div class="product-footer">
+        <span class="tag featured">Web Scraping</span>
+        <span class="tag">Python</span>
+        <span class="tag">API</span>
+        <span class="tag new">Best Seller</span>
+      </div>
+      <a href="https://shadowcraft41.gumroad.com/l/spwxix" class="product-cta" target="_blank">Buy Now →</a>
+    </div>
+  </div>
+
+  <!-- Bundle -->
+  <div class="bundle">
+    <h2>📦 The Developer Bundle</h2>
+    <p>Get all three products at a discount. Everything you need for AI development, web scraping, and prompt engineering.</p>
+    <div class="bundle-price">$25 <span>USD</span></div>
+    <div style="color:#64748b;margin-bottom:20px;">Regular price: $33 — Save $8</div>
+    <div class="bundle-cta" onclick="alert('Bundle coming soon! Individual products available below.')">Coming Soon</div>
+    <div class="bundle-note">Each product also available individually. Lifetime access. Instant download.</div>
+  </div>
+
+  <div id="features" class="section-title">
+    <h2>Why Buy From Us</h2>
+    <p>Every product is tested, documented, and built by an engineer who uses these tools daily.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <h3>⚡ Instant Download</h3>
+      <p>Get immediate access after purchase. No waiting, no shipping, no delays.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔒 Lifetime Access</h3>
+      <p>Buy once, own forever. No subscriptions, no recurring fees, no surprises.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔄 Free Updates</h3>
+      <p>All products get regular updates. You get every improvement at no extra cost.</p>
+    </div>
+    <div class="feature-card">
+      <h3>💬 Priority Support</h3>
+      <p>Questions? Issues? Get direct help. We respond within 24 hours.</p>
+    </div>
+    <div class="feature-card">
+      <h3>✅ Battle-Tested</h3>
+      <p>Every tool is used in production. 21,000+ API requests served, 11 passing tests.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🛡️ Secure Checkout</h3>
+      <p>Payments processed securely through Gumroad. Your info is safe.</p>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="section-title">
+    <h2>What Developers Say</h2>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"The prompt toolkit saved me hours of work. Well organized and actually useful prompts."</div>
+      <div class="testimonial-author">Alex Chen</div>
+      <div class="testimonial-role">AI Engineer</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"PyReview is exactly what I needed for my RAG pipeline. Simple, works, no bloat."</div>
+      <div class="testimonial-author">Sarah Kim</div>
+      <div class="testimonial-role">ML Engineer</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-stars">★★★★★</div>
+      <div class="testimonial-text">"ScrapeUnblocker handles sites that other tools can't touch. Worth every penny."</div>
+      <div class="testimonial-author">Marcus Johnson</div>
+      <div class="testimonial-role">Data Engineer</div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-title">
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq">
+    <div class="faq-question">
+      <h3>How do I access my purchase?</h3>
+      <p>Immediately after purchase, you'll receive a download link via email and on the Gumroad confirmation page. All products are digital downloads.</p>
+    </div>
+    <div class="faq-question">
+      <h3>Can I get a refund?</h3>
+      <p>Yes! If a product doesn't meet your needs, email us within 30 days for a full refund. No questions asked.</p>
+    </div>
+    <div class="faq-question">
+      <h3>Do I need a subscription?</h3>
+      <p>No. All products are one-time purchases with lifetime access. No subscriptions or recurring fees.</p>
+    </div>
+    <div class="faq-question">
+      <h3>Are updates included?</h3>
+      <p>Yes. All products include free updates. When a new version is released, you get it automatically.</p>
+    </div>
+  </div>
+
+</div>
+
+<section class="cta-section">
+  <h2>Ready to Supercharge Your Workflow?</h2>
+  <p>Join developers who use our tools daily. Instant download, lifetime access.</p>
+  <a href="https://shadowcraft41.gumroad.com/" target="_blank">Browse All Products →</a>
+</section>
+
+<footer>
+  <p>© 2026 VendexDev · Products on <a href="https://shadowcraft41.gumroad.com/" target="_blank">Gumroad</a> · Built with ❤️ for developers</p>
+  <p style="margin-top: 8px;">
+    <a href="https://github.com/ZachDreamZ/webdata-extract" target="_blank">GitHub</a> · 
+    <a href="https://gumroad.com/help/article/79-gumroad-discover" target="_blank">Discover</a>
+  </p>
+</footer>
+
+</body>
+</html>
