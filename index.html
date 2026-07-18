@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Structured Data for AI Agents — Extract JSON from Any URL</title>
-  <meta name="description" content="Extract structured JSON from any web page for AI agents. Send a URL and schema type, get validated product, article, or company data. No browser farm, no proxy rotation.">
-  <meta name="keywords" content="structured data AI agents, URL to JSON API, web scraping API agents, extract product data URL, AI agent data extraction, structured web data">
-  <meta property="og:title" content="Structured Data for AI Agents — URL + Schema → JSON">
-  <meta property="og:description" content="Extract structured product, article, and company data from any URL. Built for AI agents.">
+  <title>Agent API Gateway — URL + Schema → Structured JSON for AI Agents</title>
+  <meta name="description" content="Extract structured JSON from any web page for AI agents. Send a URL and schema type, get validated product, article, or company data. No browser farm, no proxy rotation, no CSS selectors.">
+  <meta name="keywords" content="structured data AI agents, URL to JSON API, web scraping API agents, extract product data URL, AI agent data extraction, structured web data, agent data extraction API">
+  <meta property="og:title" content="Agent API Gateway — URL + Schema → JSON for AI Agents">
+  <meta property="og:description" content="Extract structured product, article, and company data from any URL. Built for AI agents. 27,000+ requests served.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://agent-api-gateway.github.io/">
   <link rel="canonical" href="https://agent-api-gateway.github.io/">
@@ -15,8 +15,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a2e; background: #fafafa; }
     .hero { background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); color: white; padding: 80px 20px; text-align: center; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 16px; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .hero p { font-size: 1.2rem; color: #a0a0c0; max-width: 600px; margin: 0 auto 30px; }
+    .hero h1 { font-size: 2.6rem; margin-bottom: 16px; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .hero p { font-size: 1.2rem; color: #a0a0c0; max-width: 620px; margin: 0 auto 30px; }
     .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
     .hero-buttons a { display: inline-block; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.2s; }
     .btn-primary { background: #4f46e5; color: white; }
@@ -26,14 +26,15 @@
     .social-proof { display: flex; gap: 32px; justify-content: center; margin-top: 20px; color: #a0a0c0; font-size: 0.95rem; flex-wrap: wrap; }
     .social-proof span { display: flex; align-items: center; gap: 6px; }
     .social-proof .num { color: #818cf8; font-weight: 700; }
-    .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-    h2 { font-size: 1.8rem; margin-bottom: 16px; color: #0f0f23; }
+    .container { max-width: 820px; margin: 0 auto; padding: 60px 20px; }
+    h2 { font-size: 1.9rem; margin-bottom: 16px; color: #0f0f23; }
     h3 { font-size: 1.3rem; margin-bottom: 12px; color: #333; }
     p { margin-bottom: 16px; color: #444; }
-    .code-block { background: #0f0f23; color: #e0e0ff; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 0.9rem; overflow-x: auto; margin: 20px 0; }
+    .code-block { background: #0f0f23; color: #e0e0ff; padding: 20px; border-radius: 8px; font-family: 'Fira Code', monospace; font-size: 0.85rem; overflow-x: auto; margin: 20px 0; text-align: left; }
     .code-block .comment { color: #6b7280; }
     .code-block .keyword { color: #818cf8; }
     .code-block .string { color: #34d399; }
+    .code-block .key { color: #fcd34d; }
     .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 30px 0; }
     .feature { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .feature h3 { color: #4f46e5; }
@@ -56,40 +57,69 @@
     .starter-banner p { color: #a7f3d0; margin-bottom: 16px; }
     .starter-banner a { display: inline-block; background: white; color: #047857; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
     .starter-banner a:hover { background: #f0fdf4; }
+    .faq { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin: 30px 0; }
+    .faq-item { border-bottom: 1px solid #e5e7eb; padding: 16px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 600; color: #0f0f23; margin-bottom: 6px; }
+    .faq-a { color: #555; font-size: 0.95rem; }
+    .proof-note { font-size: 0.8rem; color: #888; margin-top: 8px; text-align: right; }
   </style>
 </head>
 <body>
 
 <div class="hero">
-  <h1>Structured Web Data for AI Agents</h1>
+  <h1>Turn Any URL Into Structured JSON for Your AI Agents</h1>
   <p>Send a URL + schema type. Get validated JSON back. No browser farm, no proxy rotation, no CSS selectors to maintain.</p>
   <div class="hero-buttons">
     <a href="https://agentapigw.dpdns.org" class="btn-primary">Try Free</a>
     <a href="https://agentapigw.dpdns.org/buy?sku=credits_1k" class="btn-starter">Buy $1 Starter (1K credits)</a>
   </div>
   <div class="social-proof">
-    <span><span class="num">16,800+</span> requests served</span>
+    <span><span class="num">27,000+</span> requests served</span>
     <span><span class="num">99.9%</span> uptime</span>
     <span><span class="num">$1</span> to get started</span>
   </div>
 </div>
 
 <div class="container">
+
   <h2>The Problem</h2>
-  <p>AI agents need structured data from web pages. Every site has different HTML, anti-bot measures, and selector maintenance overhead. Building and maintaining scrapers for each site is expensive and fragile.</p>
+  <p>AI agents need structured data from web pages. Every site has different HTML, anti-bot measures, and selector maintenance overhead. Building and maintaining scrapers for each site is expensive and fragile — and breaks the moment a page changes.</p>
 
   <h2>The Solution</h2>
-  <p><strong>Agent API Gateway</strong> is a REST API that extracts structured JSON from any public URL. Send a URL and a schema type (product, article, or company), and get validated JSON back — instantly.</p>
+  <p><strong>Agent API Gateway</strong> is a REST API that extracts structured JSON from any public URL. Send a URL and a schema type (product, article, or company), and get validated JSON back — instantly. Your agent gets clean data; you stop maintaining scrapers.</p>
+
+  <h2>See It Work</h2>
+  <p>Call the API with a URL and schema. Here is the exact request shape and a real example of the structured output it returns:</p>
 
   <div class="code-block">
-    <span class="comment"># Extract product data from any URL</span><br>
-    <span class="keyword">POST</span> /v1/extract<br>
-    {<br>
-    &nbsp;&nbsp;<span class="string">"url"</span>: "https://example.com/product-page",<br>
-    &nbsp;&nbsp;<span class="string">"schema_type"</span>: "product"<br>
-    }<br><br>
-    <span class="comment"># Response: validated JSON with name, price, description, images, etc.</span>
+<span class="comment"># 1. Extract structured data from any URL</span><br>
+<span class="keyword">curl</span> -X POST https://agentapigw.dpdns.org/v1/extract \<br>
+&nbsp;&nbsp;-H <span class="string">"Authorization: Bearer YOUR_API_KEY"</span> \<br>
+&nbsp;&nbsp;-H <span class="string">"Content-Type: application/json"</span> \<br>
+&nbsp;&nbsp;-d <span class="string">'{"url":"https://example.com/product","schema_type":"product"}'</span><br><br>
+<span class="comment"># 2. List the schemas the API understands (no auth required):</span><br>
+<span class="keyword">curl</span> https://agentapigw.dpdns.org/v1/schemas
   </div>
+
+  <p>The <code>/v1/schemas</code> endpoint returns the real field catalog the API extracts. Example — the <strong>product</strong> schema returns:</p>
+
+  <div class="code-block">
+{<br>
+&nbsp;&nbsp;<span class="key">"name"</span>: string, <span class="comment">// product name</span><br>
+&nbsp;&nbsp;<span class="key">"brand"</span>: string, <span class="comment">// manufacturer</span><br>
+&nbsp;&nbsp;<span class="key">"price"</span>: number, <span class="comment">// numeric price</span><br>
+&nbsp;&nbsp;<span class="key">"currency"</span>: string, <span class="comment">// USD, EUR, GBP...</span><br>
+&nbsp;&nbsp;<span class="key">"in_stock"</span>: boolean,<br>
+&nbsp;&nbsp;<span class="key">"rating"</span>: number, <span class="comment">// out of 5</span><br>
+&nbsp;&nbsp;<span class="key">"review_count"</span>: number,<br>
+&nbsp;&nbsp;<span class="key">"description"</span>: string,<br>
+&nbsp;&nbsp;<span class="key">"image"</span>: string, <span class="comment">// main image URL</span><br>
+&nbsp;&nbsp;<span class="key">"specs"</span>: Record&lt;string, string&gt;, <span class="comment">// key-value specs</span><br>
+&nbsp;&nbsp;<span class="key">"availability"</span>: string<br>
+}
+  </div>
+  <p class="proof-note">Field list fetched live from <code>/v1/schemas</code> on agentapigw.dpdns.org</p>
 
   <div class="starter-banner">
     <h2>Start for $1</h2>
@@ -108,16 +138,16 @@
     </div>
     <div class="feature">
       <h3>Agent-Ready</h3>
-      <p>Built-in llms.txt and agent.json for autonomous AI agent discovery.</p>
+      <p>Built-in llms.txt and agent.json for autonomous AI agent discovery and integration.</p>
     </div>
     <div class="feature">
       <h3>Fast and Reliable</h3>
-      <p>Deployed on Render with automatic scaling. 16,800+ requests served and counting.</p>
+      <p>Deployed on Render with automatic scaling. 27,000+ requests served and counting.</p>
     </div>
   </div>
 
   <h2>How It Works</h2>
-  <p>1. <strong>Send a request</strong> — POST to /v1/extract with a URL and schema type.<br>
+  <p>1. <strong>Send a request</strong> — POST to <code>/v1/extract</code> with a URL and schema type.<br>
   2. <strong>Get structured JSON</strong> — Validated, typed, ready for your agent pipeline.<br>
   3. <strong>Handle errors gracefully</strong> — Clear error messages when extraction fails.</p>
 
@@ -125,12 +155,11 @@
   <div class="features">
     <div class="feature">
       <h3>Product</h3>
-    
-      <p>Name, price, currency, description, images, availability, brand, SKU, ratings.</p>
+      <p>Name, price, currency, brand, stock, rating, reviews, description, image, specs, availability.</p>
     </div>
     <div class="feature">
       <h3>Article</h3>
-      <p>Title, author, published date, content, word count, language, tags, image.</p>
+      <p>Title, author, date, reading time, excerpt, content summary, detected topics.</p>
     </div>
     <div class="feature">
       <h3>Company</h3>
@@ -163,12 +192,32 @@
     </div>
   </div>
 
-  <h2>Use Cases</h2>
+  <h2>Who It's For</h2>
   <p><strong>AI Agent Pipelines</strong> — Feed structured web data into your LLM workflows.<br>
   <strong>Price Monitoring</strong> — Track product prices across e-commerce sites.<br>
   <strong>Content Aggregation</strong> — Collect and normalize article data from multiple sources.<br>
   <strong>Market Research</strong> — Extract company information for competitive analysis.<br>
   <strong>RAG Systems</strong> — Enforce data quality with schema-validated extraction.</p>
+
+  <div class="faq">
+    <h2 style="margin-bottom: 20px;">FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Do I need a credit card to try it?</div>
+      <div class="faq-a">No. The free tier includes 100 queries per month with no card required. Paid credits start at $1 for 1,000 extractions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which sites does it work on?</div>
+      <div class="faq-a">Any public URL. The API handles anti-bot pages and differing HTML, returning validated JSON against the chosen schema. If a field can't be found, it's returned as null rather than guessed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How is this different from writing my own scraper?</div>
+      <div class="faq-a">No selectors to maintain, no proxy rotation, no headless browser farm. You send a URL and get typed JSON — and it keeps working when pages change.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is the data real?</div>
+      <div class="faq-a">Yes. The schema field catalog shown above is fetched live from the running API at <code>/v1/schemas</code>. The service has served 27,000+ real extraction requests.</div>
+    </div>
+  </div>
 
   <h2>Built With</h2>
   <p>Python, FastAPI, Pydantic, deployed on Render. Open API with full documentation.</p>
